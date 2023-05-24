@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>まとめサイト</title>
+    <style>
+html,
+body {
+  background-color: #3b3b3b;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cards .red {
+            background-color: #f43f5e;
+        }
+
+        .cards .blue {
+            background-color: #3b82f6;
+        }
+
+        .cards .green {
+            background-color: #22c55e;
+        }
+
+        .cards .sion {
+            background-color: #40cfc8;
+        }
+
+        .cards .kimidori {
+            background-color: #99c743;
+        }
+
+        .cards .murasaki {
+            background-color: #b24cec;
+        }
+
+        .cards .card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            height: 100px;
+            width: 250px;
+            border-radius: 10px;
+            color: white;
+            cursor: pointer;
+            transition: 400ms;
+        }
+
+        .cards .card p.tip {
+            font-size: 1em;
+            font-weight: 700;
+        }
+
+        .cards .card p.second-text {
+            font-size: .7em;
+        }
+
+        .cards .card:hover {
+            transform: scale(1.1, 1.1);
+        }
+
+        .cards:hover > .card:not(:hover) {
+            filter: blur(10px);
+            transform: scale(0.9, 0.9);
+        }
+
+        .content {
+            width: 500px;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 5px;
+        }
+
+        .menu-button {
+            display: block;
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #666;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .menu-button:hover {
+            background-color: #888;
+        }
+
+        .social-link {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .input__container {
+            max-width: 200px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 15px;
+            border-radius: 20px;
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .input__container::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            filter: blur(25px);
+            border-radius: 20px;
+            background-color: #e499ff;
+            background-image: radial-gradient(at 47% 69%, hsla(17, 62%, 65%, 1) 0px, transparent 50%),
+            radial-gradient(at 9% 32%, hsla(222, 75%, 60%, 1) 0px, transparent 50%);
+        }
+
+        .input__label {
+            display: block;
+            margin-left: 0.4em;
+            color: #000;
+            text-transform: uppercase;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+
+        .input {
+            border: none;
+            outline: none;
+            width: 100%;
+
+            border-radius: 20px;
+            background: #fff;
+            transition: background 300ms, color 300ms;
+        }
+
+
+
+.button {
+  display: block;
+  font-size: 16px;
+  transform: perspective(200px) rotateX(15deg);
+  color: white;
+  font-weight: 900;
+  border: none;
+  border-radius: 5px;
+  background: linear-gradient(0deg, rgba(63,94,251,1) 0%, rgba(70,135,252,1) 100%);
+  box-shadow: rgba(63,94,251,0.2) 0px 40px 29px 0px;
+  will-change: transform;
+  transition: all 0.3s;
+  border-bottom: 2px solid rgba(70,135,252,1);
+}
+
+button:hover {
+  transform: perspective(180px) rotateX(30deg) translateY(2px);
+}
+
+button:active {
+  transform: perspective(170px) rotateX(36deg) translateY(5px);
+}
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="input__container">
+            <label class="input__label" for="search-input"> 🔍Search</label>
+            <input placeholder="    #game" class="input" id="search-input" name="text" type="text">
+            <button class="button">Go</button>
+        </div>
+    </div>
+
+    <div class="cards">
+        <a href="https://kouseyn.github.io/countdown/" target="_blank" rel="noopener" class="card red">
+            <p class="tip">カウントダウン</p>
+            <p class="second-text">#useful</p>
+        </a>
+        <a href="https://kouseyn.github.io/weather.github.io/" target="_blank" rel="noopener" class="card blue">
+            <p class="tip">天気をみる</p>
+            <p class="second-text">#useful</p>
+        </a>
+        <a href="https://kouseyn.github.io/vs_ship/" target="_blank" rel="noopener" class="card green">
+            <p class="tip">vs ship</p>
+            <p class="second-text">#game</p>
+        </a>
+        <a href="https://kouseyn.github.io/skyline.humen/" target="_blank" rel="noopener" class="card sion">
+            <p class="tip">Jump!</p>
+            <p class="second-text">#game</p>
+        </a>
+        <a href="https://kouseyn.github.io/xgame/" target="_blank" rel="noopener" class="card kimidori">
+            <p class="tip">Bird!</p>
+            <p class="second-text">#game</p>
+        </a>
+        <a href="https://kouseyn.github.io/2048/" target="_blank" rel="noopener" class="card murasaki">
+            <p class="tip">パズル(2048!)</p>
+            <p class="second-text">#game</p>
+        </a>
+
+
+
+    </div>
+
+
+
+
+    <a href="https://instagram.com/uhhwee_1107/" target="_blank" rel="noopener">
+        <img class="social-link" src="https://hiyokoyarou.com/wp-content/uploads/2018/01/insta-fu-1024x922.png" alt="Instagram">
+    </a>
+
+    <script>
+        document.querySelector('.button').addEventListener('click', search);
+
+        function search() {
+            const searchInput = document.getElementById('search-input').value.toLowerCase();
+            const cards = document.querySelectorAll('.cards .card');
+
+            cards.forEach(card => {
+                const tip = card.querySelector('.tip').textContent.toLowerCase();
+                const secondText = card.querySelector('.second-text').textContent.toLowerCase();
+
+                if (tip.includes(searchInput) || secondText.includes(searchInput)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
